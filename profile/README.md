@@ -1,12 +1,12 @@
-## Hi there 👋
+# ResearchLab Autonomous Shipping Delft
+https://rasdelft.nl/
 
-<!--
 
-**Here are some ideas to get you started:**
+## Organisation
+We develop and investigate marine robotic control systems, housed at Mechanical Engineering faculty @ TUDelft. We conduct research ourselves and together with Bsc. Msc. or Phd projects. Our goal is to have a flexible, reliable and convenient framework to facilitate ever varying research or education goals within the TUDelft and her partners. 
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Facilities
+- Various types of model scale ships, ranging from 40cm to 1m
+- Various testing locations, controlled (lab/inside) and uncontrolled (larger sensor errors, more disturbance, more realistic sensing challenges.
+- Components designed to be integrated in an interchangable framework, mostly ROS2 based.
+- Various software modules such as , "actuator/sensor drivers",'Real-time simulator" or "control modules" 
