@@ -14,7 +14,7 @@ For information on the technicalities on the facilities and software, contact fa
 We have various bodies of water, both inside and outside, where we regulary conduct experiments with any of our 18 available model scale ships. 
 The nature of the testing facilities and vessels vary, to cater various research needs. Inside bodies have visual motion tracking systems, whereas outside we rely on ship mounted sensors. 
 
-See more detailed descriptions in the [fleet & facility overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/facilities)
+See more detailed descriptions in the [fleet & facility overview](https://github.com/RAS-Delft/.github/tree/main/profile/facilities)
 
 
 * Towing Tank, Faculty lake with Tito Neri vessel
@@ -30,7 +30,7 @@ See more detailed descriptions in the [fleet & facility overview](https://github
 </p>
 
 ## Control modules
-Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/module_overviews) describes modules that are used in the common vessel control stacks within RAS. Most components are developed to work with/on the Robotic Operating System. 
+Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/.github/tree/main/profile/module_overviews) describes modules that are used in the common vessel control stacks within RAS. Most components are developed to work with/on the Robotic Operating System. 
 
 This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
 Our vision is to re-use as much modules as possible when doing experimentals, so we can benefit from previous work and mature existing components. 
@@ -40,7 +40,7 @@ Our vision is to re-use as much modules as possible when doing experimentals, so
 </p>
 
 ## Vessel dynamical models
-The [vessel model overview](https://github.com/RAS-Delft/ras-documentation-overview/edit/main/vesselmodels) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
+The [vessel model overview](https://github.com/RAS-Delft/.github/tree/main/profile/vesselmodels) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
 
 <p align="center" width="100%">
     <img width="60%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/bbfb4472-b482-4838-a8bf-dc8f0276c8c7">
