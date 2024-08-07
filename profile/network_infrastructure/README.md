@@ -15,3 +15,10 @@ After the migration to ROS2 small systems (e.g. joystick control of 3 ships) wit
 - Using ethernet cables fixed basically all issues. Wifi throughput is the culprit. Colleagues told me its either volume or total package numbers. Prior traffic monitoring showed data transfer during operation showed magnitudes of 5-50kb/sec outgoing traffic on a drone, which is not a lot so I suspect that its total number of packages that are problematic. We can try eliminating numbers further where possible. 
 - To be continued...
 
+
+
+## Router Info
+A bit of background on the routers in case of future debugging:
+- NETGEAR21 Nighthawk X6 R8000 - Commonly used in basement + waterside. Configuration at http://192.168.1.1/
+- AGV_Lab-2.4GHz Tplink Archer C7 - Backup router. Configuration at http://tplinkwifi.net/
+- NETGEAR32 
