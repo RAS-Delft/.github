@@ -35,7 +35,8 @@ The organisation repositories offer a variety of repositories that cater to rese
 ### General control modules
 | Name                | Description                                                                    |
 | ------------------- | ------------------------------------------------------------------------------ |
-| [Joystick controller (Matlab Gui) ](https://github.com/RAS-Delft/RAS_General/blob/main/matlab/GUI%20%26%20control%20subsystems/Joystick_app_directJoyControl.mlapp)| Allows joystick control of actuators by a human operator|
+| [Joystick controller (ros2 standalone)](https://github.com/RAS-Delft/ras_joystick_control)| Allows joystick control over ships. You need basic ros2 installed|
+| [Joystick controller (Matlab) ](https://github.com/RAS-Delft/RAS_General/blob/main/matlab/GUI%20%26%20control%20subsystems/Joystick_app_directJoyControl.mlapp)| Allows joystick control of actuators by a human operator. You need Matlab with ros2 toolbox|
 | Control effort allocator 3dof  | Allocates a desired control effort of a delfia with simple constraints.   |
 | Heading controller| Controls heading of a vessel (PID based) |link  |
 | Waypoint following manager | Manages waypoints of a track that a vessel needs to follow. Has a click point user interface to adjust path. Calculates reference heading of a ship and detects if ship needs to snap to a next waypoint. |
