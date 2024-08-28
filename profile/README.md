@@ -40,6 +40,19 @@ Our vision is to re-use as much modules as possible when doing experimentals, so
 </p>
 <p align="center">An example block schematic built from different control modules</p>
 
+## Benchmark system setup guides
+To interact with the ships, you can use the following guide to start the framework
+
+1) Configuring your system
+2) Running a vessel simulator
+3) Visualize the motion of the ship
+5) Take control with a joystick module or your own software
+6) Use a heading control module
+7) Start the benchmark formation control stack
+8) Start the benchmark Swarm control stack
+9) Configure physical ships to operate outside
+10) Operate physical ships outside
+
 ## Vessel dynamical models
 The [vessel model overview](https://github.com/RAS-Delft/.github/tree/main/profile/vesselmodels) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
 
