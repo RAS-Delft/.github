@@ -36,18 +36,14 @@ This section describes different software components that we have, how they inte
 Our vision is to re-use as much modules as possible when doing experimentals, so we can benefit from previous work and mature existing components. 
 
 <p align="center" width="100%">
-    <img width="50%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/8cab54e9-9cba-43a9-b082-1e70f5535b84">
+    <img width="80%" src="https://github.com/user-attachments/assets/f1de20f7-9d4d-4674-aeac-bd8d720fb5df" alt="An example block schematic built from different control modules">
 </p>
+<p align="center">An example block schematic built from different control modules</p>
 
 ## Vessel dynamical models
 The [vessel model overview](https://github.com/RAS-Delft/.github/tree/main/profile/vesselmodels) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/RAS-Delft/ras-documentation-overview/assets/5917472/bbfb4472-b482-4838-a8bf-dc8f0276c8c7">
+    <img width="60%" src="https://github.com/user-attachments/assets/860e9393-3565-4a09-9c18-c071f4135756">
 </p>
-
-
-
-
-
  
