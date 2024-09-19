@@ -29,7 +29,22 @@ See more detailed descriptions in the [fleet & facility overview](https://github
     <img width="49%" src="https://github.com/user-attachments/assets/966b21e7-ca25-4b2b-a8bd-db5b3e55afb0"> 
 </p>
 
-## Control modules
+## User guide
+Instructions to start using ras systems for new users
+
+1) [Configuring your system](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/1_configuring_your_system)
+2) [Running a vessel simulator](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/2_running_a_vessel_simulator)
+3) [Visualize the motion of the ship](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/3_ship%20visualisation)
+4) [Take control with a joystick module or your own software](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/4_joystick_teleoperation)
+5) [Use a heading control module](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/5_start%20a%20(heading)%20control%20module)
+6) [Start the benchmark formation control stack](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/6_start%20a%20formation%20control%20stack)
+7) [Start the benchmark Swarm control stack](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/7_start%20a%20swarm%20control%20stack)
+8) [Operate physical ships outside](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/8_start%20physical%20vessels)
+
+## Default component interfaces
+Various signals that are being passed between components (e.g. sensor measurements, control signals) are commonly defined in a certain way within our framework. This is not set in stone, but this page describes our preferred way of defining messages.
+
+## Overview of common modules
 Many components are required to make a ship manouver automated, from sensing, various levels of decision-making, communication to actuation. The [control module overview](https://github.com/RAS-Delft/.github/tree/main/profile/module_overviews) describes modules that are used in the common vessel control stacks within RAS. Most components are developed to work with/on the Robotic Operating System. 
 
 This section describes different software components that we have, how they interface with eachother, and where links to their repositories. 
@@ -40,23 +55,6 @@ Our vision is to re-use as much modules as possible when doing experimentals, so
 </p>
 <p align="center">An example block schematic built from different control modules</p>
 
-## Benchmark system setup guides
-To interact with the ships, you can use the following guide to start the framework
 
-1) Configuring your system
-2) Running a vessel simulator
-3) Visualize the motion of the ship
-5) Take control with a joystick module or your own software
-6) Use a heading control module
-7) Start the benchmark formation control stack
-8) Start the benchmark Swarm control stack
-9) Configure physical ships to operate outside
-10) Operate physical ships outside
-
-## Vessel dynamical models
-The [vessel model overview](https://github.com/RAS-Delft/.github/tree/main/profile/vesselmodels) gives the information what we know about the dynamics of the ships. It is intended to document best known models for particular scenarios, what versions are out there, how the measurements are obtained, known limitations and links to measurement reports. 
-
-<p align="center" width="100%">
-    <img width="60%" src="https://github.com/user-attachments/assets/860e9393-3565-4a09-9c18-c071f4135756">
-</p>
- 
+## Maintainers guides
+For people that are familliar with ROS / RAS systems or that want to work more on the backend of our systems. This is mostly for technical staff / for ourselves, but feel free to snoop around to see how we set things up.
