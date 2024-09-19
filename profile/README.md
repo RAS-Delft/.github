@@ -32,15 +32,14 @@ See more detailed descriptions in the [fleet & facility overview](https://github
 ## User guide
 Instructions to start using ras systems for new users
 
-1) Configuring your system
-2) Running a vessel simulator
-3) Visualize the motion of the ship
-5) Take control with a joystick module or your own software
-6) Use a heading control module
-7) Start the benchmark formation control stack
-8) Start the benchmark Swarm control stack
-9) Configure physical ships to operate outside
-10) Operate physical ships outside
+1) [Configuring your system](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/1_configuring_your_system)
+2) [Running a vessel simulator](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/2_running_a_vessel_simulator)
+3) [Visualize the motion of the ship](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/3_ship%20visualisation)
+4) [Take control with a joystick module or your own software](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/4_joystick_teleoperation)
+5) [Use a heading control module](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/5_start%20a%20(heading)%20control%20module)
+6) [Start the benchmark formation control stack](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/6_start%20a%20formation%20control%20stack)
+7) [Start the benchmark Swarm control stack](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/7_start%20a%20swarm%20control%20stack)
+8) [Operate physical ships outside](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/8_start%20physical%20vessels)
 
 ## Default component interfaces
 Various signals that are being passed between components (e.g. sensor measurements, control signals) are commonly defined in a certain way within our framework. This is not set in stone, but this page describes our preferred way of defining messages.
