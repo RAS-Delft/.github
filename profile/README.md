@@ -58,3 +58,4 @@ Our vision is to re-use as much modules as possible when doing experimentals, so
 
 ## Maintainers guides
 For people that are familliar with ROS / RAS systems or that want to work more on the backend of our systems. This is mostly for technical staff / for ourselves, but feel free to snoop around to see how we set things up.
+1) [Configuring a ship PC & Microcontroller from scratch](https://github.com/RAS-Delft/.github/tree/main/profile/maintainers_guide/benchmark_vessel_computer_setup#readme)
