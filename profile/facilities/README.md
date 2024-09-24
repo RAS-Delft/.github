@@ -57,11 +57,8 @@ As indicated below, the inside testing locations have the vertical axis (z) posi
 |**Size:** 1.28x0.79x0.30m|
 | Covered with an arch with optitrack cameras providing localisation over the whole surface|
 
-
-
-
 ### RAS Basement tank
-|<p align="center" width="100%">    <img width="70%" src="https://github.com/user-attachments/assets/4221c42e-0e8c-43d8-95c6-bf88073f8898"> <img width="30%" src="https://github.com/user-attachments/assets/e13674a4-cc5e-4d80-a1e6-1be8830d137f"> </p> |
+|<p align="center" width="100%">    <img width="70%" src="https://github.com/user-attachments/assets/4221c42e-0e8c-43d8-95c6-bf88073f8898"> <img width="30%" src="https://github.com/user-attachments/assets/e13674a4-cc5e-4d80-a1e6-1be8830d137f"> <img width="30%" src="https://github.com/user-attachments/assets/62ca7ca3-393d-4139-9bc2-8a7b6b3badee"> </p> |
 | ----- | 
 |**Size:** 3.5x4.0x1.8m width, length, depth|
 |The purpose of this tank is doing experiments in non-flowing water for surface & underwater robots. It will be equipped with optical motion tracking systems similar to the other tanks (for surface operation), and potentially localization sensors underwater afterwards. |
