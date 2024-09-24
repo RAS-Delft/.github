@@ -78,13 +78,18 @@ Put the Emlid Reach on the tripod outside near your sailing area. Think of a met
 
 Make sure it is visible by sattelites from as wide angles as possible (e.g. not next to a wall). Turn it on, and don't move it. The device will read its position for 2 minutes, average it as its assumed location, and then start broadcasting a stream of gnss corrections over LoRa.
 
-When you started up the ship, the Emlid M2 gnss module should have also started. It should have the three colored LEDS on top on. Unplug/replug if not. 
+When you started up the ship, the Emlid M2 gnss module should have also started. It should have the three colored LEDS on top on. Unplug/replug if not. You should be able to ping the M2 (from the ship pc).
+```shell
+ping 192.168.2.15
+```
 
 Open another terminal on your shore pc. SSH into the ship again. Start the [gnss bridge](https://github.com/RAS-Delft/reach_ros_node), which passes on the emlid gnss stream and publishes it on ROS:
 ```shell
 ros2 run reach_ros_node nmea_tcp_driver --ros-args -p host:=192.168.2.15 -p port:=9001 -r __ns:=/${VESSEL_ID} -r tcpfix:=telemetry/gnss/fix -r tcpvel:=telemetry/gnss/tcpvel -r tcptime:=telemetry/gnss/tcptime
 ```
 This should yield a stream of the gnss position on ROS if your ship is outside. '192.168.2.15' is the address of the emlid M2 from the pc and is static. 
+
+Notice how there is also already some remapping of topics, which can be changed when needed. 
 
 If the ship is inside the bridge gives warnings that it has empty messages, which can be ignored. 
 
