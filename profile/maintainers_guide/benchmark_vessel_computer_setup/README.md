@@ -133,7 +133,7 @@ Run the system according to the [user guide: Starting physical vessels](https://
 
 ## Using docker
 ### Installing the modules
-Get the repository with main dockerfiles in the home folder ('cd ~')
+Get the [repository with main dockerfiles](https://github.com/RAS-Delft/ras_ros_low_level_systems) in the home folder ('cd ~')
 ```shell
 git clone https://github.com/RAS-Delft/ras_ros_low_level_systems
 ```
