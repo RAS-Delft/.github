@@ -10,6 +10,8 @@ There are two ways to deploy software systems on ships here
 - Manual; you install all dependencies, you download all required repositories/ros packages, place them, build them. 
 - Use Docker. Dockerfiles describe the same steps, but already programmed as if it is a recipe. Its more complex to set up, but easier to deploy/repair on larger systems (e.g. more services per ship/ more ships). The steps for docker are listed as optional. 
 
+Note that if some of the manual setup instructions are unclear/incomplete, consider checking out the docker instructions. The effective steps that the systems are doing are mostly identical. Consider opening a dockerfile and observing what commands are run there, as your solution might be there as well. 
+
 ## Installation of OS on on-board computer
 Install a recent linux distribution. You can choose a more minimalistic OS, or one with conveniencies such as a desktop GUI. 
 
@@ -180,14 +182,32 @@ cd ~/ros2_ws
 colcon build
 source install/setup.bash
 ```
+### Installing dependencies
+We need pip
+```shell
+sudo apt-get install pip
+```
+Use pip to install pyserial
+```shell
+pip install pyserial
+```
 
 ### Flashing the microcontroller
 Connect and flash software to the actuator microcontroller. Commonly we used arduino's, although we are not limited to this. The latest version of the control software is found in the [ras_main_micro_driver repository](https://github.com/RAS-Delft/ras_main_micro_driver/tree/main). Flashing can be done with ArduinoIDE or PlatformIO, as you prefer.
 
-### Running the bridge
+If needed, you can find the USB port upon which a device with 'Arduino' in the devicename is connected with:
+```shell
+echo $(ls -l /dev/serial/by-id/ | grep Arduino | awk '{print $NF}' | awk -F '/' '{print $NF}')
+```
+
+If your device does not already have permission for the usb port, edit them with:
+```shell
+sudo chmod 666 /dev/ttyAMA0 # Fill in the right device port here
+```
+### Running the microcontroller and gnss bridge
 Run the system according to the [user guide: Starting physical vessels](https://github.com/RAS-Delft/.github/tree/main/profile/user_guide/8_start%20physical%20vessels).
 
-## Using docker
+## Option (2) Using docker
 ### Installing the modules
 Get the [repository with main dockerfiles](https://github.com/RAS-Delft/ras_ros_low_level_systems) in the home folder ('cd ~')
 ```shell
@@ -211,8 +231,58 @@ Build and run the docker containers
 ```shell
 docker compose build
 ```
+Here is an example of contents of a dockerfile (in this case the [ros_arduino_bridge](https://github.com/RAS-Delft/ras_ros_low_level_systems/blob/main/ros_arduino_bridge/Dockerfile)). Note similarities between the steps that are described above in the section on manual installation. 
+```dockerfile
+# Get argument ROS_DISTRO from the build command or set default value
+ARG ROS_DISTRO=iron
+
+# Use the official ROS 2 image
+FROM ros:${ROS_DISTRO}-ros-base
+
+ENV VESSEL_ID=default
+
+# Install additional packages
+ RUN apt-get update && apt-get install -y \
+      pip
+#     iputils-ping \
+#     ros-iron-xacro
+
+RUN pip install pyserial
+
+# Copy the boid_ros_pkg directory into container ros2_ws/src
+COPY ros_micro_bridge/. /ros2_ws/src/ros_micro_bridge
+
+# Build the workspace
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
+    cd /ros2_ws && \
+    colcon build
+
+# Source ros when accessed via bash: (e.g. through `docker exec -it boid_1 /bin/bash`)
+#RUN echo ". /entrypoint.sh" >> /root/.bashrc
+
+# Set tasks to be run upon container startup
+CMD . /opt/ros/${ROS_DISTRO}/setup.sh && \
+    . /ros2_ws/install/setup.sh && \
+    ros2 run ros_micro_bridge arduino_bridge_ros2 --ros-args --remap __ns:=/${VESSEL_ID}
+```
 
 Note on 24 sept 2024 on the docker stack - Bart Boogmans: Since we switched to cylcone as RMW, this still needs some configurations with the latest dockerfiles. Probably a line that installs cyclonedds in the dockerfiles need to be added, as it now throws an error.
+### Flashing microcontroller with Docker image
+The microcontroller is responsible for executing desired actuation. Flashing the microcontroller can be done with starting the set-up docker container that 
+- autodetects usb port (defaults to device with Arduino in the name)
+- Installs flash software (platformIO) and required libraries in temporary container
+- flashes the microcontroller C++ software that is included in [this repository](https://github.com/RAS-Delft/ras_ros_low_level_systems), and exits. 
+
+Navigate to the microcontroller driver folder
+```shell
+cd /home/ras/ras_ros_low_level_systems/microcontroller_driver
+```
+Build the docker container. Let the installer container do its thing
+```shell
+docker compose build; docker compose up
+```
+
+The microcontroller should now be ready for use.
 
 ### Running
 We simply call the docker compose file. It will look if the required images exist (they should if they were built in the previous section). If so, it will run the specified components.
