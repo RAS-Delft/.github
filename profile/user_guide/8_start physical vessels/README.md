@@ -82,7 +82,7 @@ When you started up the ship, the Emlid M2 gnss module should have also started.
 
 Open another terminal on your shore pc. SSH into the ship again. Start the [gnss bridge](https://github.com/RAS-Delft/reach_ros_node), which passes on the emlid gnss stream and publishes it on ROS:
 ```shell
-ros2 run reach_ros_node nmea_tcp_driver --ros-args -p host:="192.168.2.15" -p port:="9001"
+ros2 run reach_ros_node nmea_tcp_driver --ros-args -p host:=192.168.2.15 -p port:=9001 -r __ns:=/${VESSEL_ID} -r tcpfix:=telemetry/gnss/fix -r tcpvel:=telemetry/gnss/tcpvel -r tcptime:=telemetry/gnss/tcptime
 ```
 This should yield a stream of the gnss position on ROS if your ship is outside. '192.168.2.15' is the address of the emlid M2 from the pc and is static. 
 
